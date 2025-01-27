@@ -1,7 +1,7 @@
+/* Navigation Bar */
 .topnav
 {
     width: auto;
-    /*background-color:hsl(28, 14%, 21%);*/
     overflow: hidden;
     padding-top: 8px;
 }
@@ -13,7 +13,7 @@
     text-align: right;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: px;
 }
 
 .topnav a:hover 
@@ -39,6 +39,14 @@
 
 }
 
+/* Home Page Adjustments*/
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+}
+
 html, body 
 {
     scrollbar-width: none;
@@ -49,10 +57,21 @@ html, body
 
 body 
 {
-    background-image: url(camping9.jpg);
+    background-image: url(homebg.jpg);
     background-size: cover;
     background-position: center 90%;
     background-repeat: no-repeat; /* Prevents tiling of the image */
 }
+
+h1 
+{
+    margin-bottom: 20px;  
+}
+  
+h3 
+{
+    margin-top: 58px;  
+}
+  
 
 

@@ -2,10 +2,9 @@
 .topnav
 {
     position: fixed;
-    width: 100%;
+    width: 99.8%;
     top: 0;
     left: 0;
-    /*background-color:hsl(28, 14%, 21%);*/
     overflow: hidden;
     padding-top: 8px;
 }
@@ -17,7 +16,7 @@
     text-align: right;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .topnav a:hover 
@@ -47,7 +46,7 @@
 {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Times New Roman', serif;
 }
 
 html, body
@@ -138,7 +137,7 @@ input:focus
     display: flex;
     align-items: center;
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 15px;
     color: rgb(228, 218, 212);
 }
 
@@ -183,7 +182,6 @@ p
     text-decoration: none;
     color:rgb(88, 65, 49);
     font-weight: bold;
-    
 }
 
 
