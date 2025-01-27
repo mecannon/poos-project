@@ -1,0 +1,58 @@
+.topnav
+{
+    width: auto;
+    /*background-color:hsl(28, 14%, 21%);*/
+    overflow: hidden;
+    padding-top: 8px;
+}
+
+.topnav a 
+{
+    float: right;
+    color: rgb(72, 53, 40);
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover 
+{
+    background-color: #70777889;
+    color: black;
+}
+  
+  /* Add a color to the active/current link */
+.topnav a.active 
+{
+    background-color: rgb(58, 96, 74);
+    color: rgb(220, 205, 161);
+}
+
+.container
+{
+    padding: 16px;
+    background-color: rgba(67, 49, 20, 0.539);
+    width: 50%;
+    height: 125px;
+    justify-content: center;
+
+}
+
+html, body 
+{
+    scrollbar-width: none;
+    margin: 2px;
+    background-color: black;
+    height: 100%; /* Ensures the body stretches to full viewport height */
+}
+
+body 
+{
+    background-image: url(camping9.jpg);
+    background-size: cover;
+    background-position: center 90%;
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+}
+
+

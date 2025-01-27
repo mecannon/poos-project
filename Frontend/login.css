@@ -1,0 +1,189 @@
+/* For login page */
+.topnav
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /*background-color:hsl(28, 14%, 21%);*/
+    overflow: hidden;
+    padding-top: 8px;
+}
+
+.topnav a 
+{
+    float: right;
+    color: rgb(72, 53, 40);
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover 
+{
+    background-color: #ac8b6c40;
+    color: rgba(85, 59, 44, 0.683);
+}
+  
+  /* Add a color to the active/current link */
+.topnav a.active 
+{
+    background-color: rgb(58, 96, 74);
+    color: rgb(220, 205, 161);
+}
+
+.container
+{
+    padding: 16px;
+    background-color: rgba(67, 49, 20, 0.539);
+    width: 50%;
+    height: 125px;
+    justify-content: center;
+
+}
+
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body
+{
+    background-color: black;
+    margin: 2px;
+    scrollbar-width: none;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(forestbg.jpg);
+    background-size: cover;
+}
+
+.glass-container
+{
+    width: 400px;
+    height: 450px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    border: 2px solid rgb(88, 65, 49);
+}
+
+.glass-container::before
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    z-index: -1;
+
+}
+
+.login-box
+{
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2
+{
+    color:rgb(88, 65, 49);
+    margin-top: 50px;
+    margin-bottom: -20px;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+input
+{
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgb(88, 65, 49);
+    color: rgb(224, 213, 206);
+    font-size: 14px;
+}
+
+input::placeholder
+{
+    color: rgb(224, 213, 206);
+}
+
+input:focus
+{
+    outline: 2px black;
+}
+
+.options
+{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgb(228, 218, 212);
+}
+
+.options input
+{
+    margin-right: 5px;
+    margin-top: 0px;
+}
+
+.options a 
+{
+    text-decoration: none;
+    color: rgb(228, 218, 212);
+    margin-left: auto;
+}
+
+button
+{
+    background: rgba(88, 65, 49, 0.582);
+    color: rgb(224, 213, 206);
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover
+{
+    background: transparent;
+    color: rgb(88, 65, 49);
+    outline: 1px solid rgb(224, 213, 206);
+}
+
+p
+{
+    font-size: 14px;
+    color:rgb(224, 213, 206);
+    margin-top: 15px;
+}
+
+#register
+{
+    text-decoration: none;
+    color:rgb(88, 65, 49);
+    font-weight: bold;
+    
+}
+
+
