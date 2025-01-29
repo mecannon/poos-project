@@ -13,13 +13,13 @@
     text-align: right;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: px;
+    font-size: 20px;
 }
 
 .topnav a:hover 
 {
     background-color: #70777889;
-    color: black;
+    color: rgb(88, 65, 49);
 }
   
   /* Add a color to the active/current link */
@@ -51,7 +51,7 @@ html, body
 {
     scrollbar-width: none;
     margin: 2px;
-    background-color: black;
+    background-color: rgb(28, 17, 2);
     height: 100%; /* Ensures the body stretches to full viewport height */
 }
 
@@ -70,7 +70,7 @@ h1
   
 h3 
 {
-    margin-top: 58px;  
+    margin-top: 40px;  
 }
   
 

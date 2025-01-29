@@ -51,7 +51,7 @@
 
 html, body
 {
-    background-color: black;
+    background-color: rgb(28, 17, 2);
     margin: 2px;
     scrollbar-width: none;
 }
@@ -61,8 +61,6 @@ body
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(forestbg.jpg);
-    background-size: cover;
 }
 
 .glass-container
