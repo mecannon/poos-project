@@ -3,13 +3,53 @@
     <head>
         <title>Camper Contacts</title>
         <link rel="shortcut icon" type="image/jpg" href="tent_icon.jpg" rel="icon" type="image/x-icon">
-        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="contacts.css">
+        <script src="js/code.js"></script>
     </head>
 
     <div class="topnav">
         <a href="index.html">HOME</a>
     </div>
 
+    
     <body style="background-color: #e2c4aaeb">
-        <h1>CamperNet</h1>
-    </body> 
+        <h1 style="position: absolute; margin-bottom: 600px; color: rgb(88, 65, 49)">CamperNet Contacts</h1>
+        <p style="position: absolute; margin-bottom: 500px; color: rgb(88, 65, 49); font-size: 16px">Please Enter the Following Information</p>
+        <div class="content">
+            <div class="search-container">
+                <!-- Search functionality Implementation needed -->
+                <input onkeyup="searchContacts()" type="text" id="searchText" placeholder="Search...">
+                <button type="button" id="searchButton" onclick="searchContacts();">Search</button>
+            </div>
+
+            <!-- Add Contact -->
+            <div class="addContact">
+                <form>
+                    <input type="text" id="contactTextFirst" placeholder="Enter First Name" required>
+                    <input type="text" id="contactTextLast" placeholder="Enter Last Name" required>
+                    <input type="text" id="contactTextNumber" placeholder="###-###-####" required>
+                    <input type="text" id="contactTextEmail" placeholder="Username@email.com" required>
+                    <button type="button" id="addContactButton" onclick="addContact();">Add Contact</button>
+                </form>
+            </div>
+            
+            <!-- The Contacts table -->
+            <div class="table">
+                <div class="tableContent" id="contactsTable">
+                    <table id="contacts">
+                        <thead style="background-color: rgba(83, 55, 32, 0.27)">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <!-- We need javascript code to fill the contacts table, body is a placeholder for this -->
+                        <tbody id="body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
