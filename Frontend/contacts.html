@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Contact Manager</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!---Links the CSS file -->
-    <link rel="stylesheet" href="contacts.css">
-    <!--Links the javascript file -->
-    <script src="js/code.js"></script>
-</head>
+    <head>
+        <title>Contact Manager</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!---Links the CSS file -->
+        <link rel="stylesheet" href="contacts.css">
+        <!--Links the javascript file -->
+        <script src="js/code.js"></script>
+    </head>
 
-<body>
-    <!-- Top navigation, right now only a link to Home page, a logout link could also be added -->
-    <div class="topnav">
-        <a href="index.html">Home</a>
-    </div>
-
-    <!-- All page content -->
-    <div class="content">
+    <body style="background-color: #e2c4aaeb">
+        <h1 style="position: absolute; margin-bottom: 600px; color: rgb(88, 65, 49)">CamperNet Contacts</h1>
+        <p style="position: absolute; margin-bottom: 500px; color: rgb(88, 65, 49); font-size: 16px">Please Enter the Following Information</p>
+        <div class="content">
             <div class="search-container">
                 <!-- Search functionality Implementation needed -->
                 <input onkeyup="searchContacts()" type="text" id="searchText" placeholder="Search...">
                 <button type="button" id="searchButton" onclick="searchContacts();">Search</button>
             </div>
 
-        <!-- Add Contact -->
-        <div class="addContact">
-            <form id="add">
-                <input type="text" id="contactTextFirst" placeholder="First Name" required>
-                <input type="text" id="contactTextLast" placeholder="Last Name" required>
-                <input type="text" id="contactTextNumber" placeholder="###-###-####" required>
-                <input type="text" id="contactTextEmail" placeholder="username@email.com" required>
-                <button type="button" id="addContactButton" onclick="addContact();">Add Contact</button>
-            </form>
-        </div>
-
-        <!-- The Contacts table -->
-        <div class="table">
-            <div class="tableContent" id="contactsTable">
-                <table id="contacts">
-                    <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <!-- We need javascript code to fill the contacts table, body is a placeholder for this -->
-                    <tbody id="body"></tbody>
-                </table>
+            <!-- Add Contact -->
+            <div class="addContact">
+                <form>
+                    <input type="text" id="contactTextFirst" placeholder="Enter First Name" required>
+                    <input type="text" id="contactTextLast" placeholder="Enter Last Name" required>
+                    <input type="text" id="contactTextNumber" placeholder="###-###-####" required>
+                    <input type="text" id="contactTextEmail" placeholder=" Username@email.com" required>
+                    <button type="button" id="addContactButton" onclick="addContact();">Add Contact</button>
+                </form>
+            </div>
+        
+            <!-- The Contacts table -->
+            <div class="table">
+                <div class="tableContent" id="contactsTable">
+                    <table id="contacts">
+                        <thead style="background-color: rgba(83, 55, 32, 0.27)">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <!-- We need javascript code to fill the contacts table, body is a placeholder for this -->
+                        <tbody id="body"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

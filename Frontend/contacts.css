@@ -1,0 +1,151 @@
+/* Navigation Bar */
+.topnav
+{
+    position: fixed;
+    width: 99.8%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 8px;
+}
+
+.topnav a 
+{
+    float: right;
+    color: rgb(72, 53, 40);
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav a:hover 
+{
+    background-color: #ac8b6c40;
+    color: rgba(85, 59, 44, 0.683);
+}
+  
+  /* Add a color to the active/current link */
+.topnav a.active 
+{
+    background-color: rgb(58, 96, 74);
+    color: rgb(220, 205, 161);
+}
+
+.container
+{
+    padding: 16px;
+    background-color: rgba(167, 135, 84, 0.539);
+    width: 50%;
+    height: 125px;
+    justify-content: center;
+}
+
+/* Fonts, body adjustments */
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+}
+
+html, body
+{
+    background-color: #d5baa3;
+    margin: 2px;
+    scrollbar-width: none;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2
+{
+    color:rgb(88, 65, 49);
+    margin-top: 50px;
+    margin-bottom: -20px;
+}
+
+/* Contacts page adjustments */
+input
+{
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgb(88, 65, 49);
+    color: rgb(117, 99, 87);
+    font-size: 14px;
+}
+
+input::placeholder
+{
+    color: rgb(117, 99, 87);
+}
+
+input:focus
+{
+    outline: 2px black;
+}
+
+button
+{
+    background: rgba(88, 65, 49, 0.582);
+    color: rgb(224, 213, 206);
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover
+{
+    background: transparent;
+    color: rgb(88, 65, 49);
+    outline: 1px solid rgb(224, 213, 206);
+}
+
+p
+{
+    font-size: 14px;
+    color:rgb(224, 213, 206);
+    margin-top: 15px;
+}
+
+.addContact form
+{
+    margin-bottom: 50px;
+}
+
+.search-container
+{
+    margin-top: -120px;
+}
+
+/* Table adjustments */
+.table
+{
+    margin-top: 10px;
+}
+
+th
+{
+    color: rgb(88, 65, 49);
+    padding: 12px 90px;
+    position: relative;
+    width: 34%;
+}
+tbody
+{
+    background-color: rgba(83, 55, 32, 0.27);
+}
+
+input
+{
+    width: 250px;
+}
