@@ -2,10 +2,12 @@
 	$inData = getRequestInfo();
 	
 	$userId = $inData["userId"];
-	$firstName = $inData["contacts"];
-	$lastName = $inData["contacts"];
-	$phone = $inData["contacts"];
-	$email = $inData["contacts"];
+	$contacts = $inData["contacts"];
+
+	$firstName = $contacts["firstName"];
+	$lastName = $contacts["lastName"];
+	$phone = $contacts["phone"];
+	$email = $contacts["email"];
 
 	$conn = new mysqli("localhost", "appuser", "SecurePass123", "contact");
 	if ($conn->connect_error) 
