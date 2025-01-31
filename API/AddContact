@@ -1,9 +1,7 @@
 <?php
 	$inData = getRequestInfo();
 	
-	$contact = explode(", ", $inData["contacts"]);
 	$userId = $inData["userId"];
-
 	$firstName = $inData["contacts"];
 	$lastName = $inData["contacts"];
 	$phone = $inData["contacts"];
