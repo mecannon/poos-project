@@ -1,4 +1,4 @@
-const urlBase = 'we put our url here';
+const urlBase = 'http://167.71.27.149/';
 const extension = 'php';
 
 let userId = 0;
@@ -108,3 +108,45 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
+// function for handling Sign Up
+function doSignup() {
+	
+	/* TO BE TESTED
+	let username = document.getElementById("signupUsername").value;
+    let password = document.getElementById("signupPassword").value;
+
+    // Check if both fields are filled
+    if (!username || !password) {
+        document.getElementById("signupResult").innerHTML = "Both username and password are required.";
+        return;
+    }
+
+    let tmp = {
+        login: username,
+        password: password
+    };
+
+    let jsonPayload = JSON.stringify(tmp);
+    let url = urlBase + '/Register.' + extension; // Adjust the endpoint as needed
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(xhr.responseText);
+
+            if (response.error) {
+                document.getElementById("signupResult").innerHTML = "Error: " + response.error;
+            } else {
+                document.getElementById("signupResult").innerHTML = "Account created successfully!";
+                setTimeout(() => {
+                    window.location.href = "index.html"; // Redirect to login page after success
+                }, 2000);
+            }
+        }
+    };
+
+    xhr.send(jsonPayload); */
+}
