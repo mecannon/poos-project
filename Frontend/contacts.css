@@ -149,3 +149,23 @@ input
 {
     width: 250px;
 }
+
+#logoutButton 
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logoutButton:hover 
+{
+    background-color: #704c2d; /* Slightly darker shade for hover effect */
+}
