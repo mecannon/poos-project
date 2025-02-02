@@ -1,4 +1,4 @@
-const urlBase = 'http://167.71.27.149/';
+const urlBase = 'http://167.71.27.149/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -7,34 +7,44 @@ let lastName = "";
 
 function doLogin()
 {
+
+	console.log("Button clicked");
 	userId = 0;
 	firstName = "";
 	lastName = "";
-	
+
+
+
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
- 	 //	var hash = md5( password );
+
 	
+ 	 //	var hash = md5( password );
+
 	document.getElementById("loginResult").innerHTML = "";
+
 
 	let tmp = {login:login,password:password};
   	//	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/Login.' + extension;
-
+	//let url = urlBase + '/Login.' + extension;
+	let url = "http://167.71.27.149/LAMPAPI/Login.php"
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
+
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
 	try
 	{
 		xhr.onreadystatechange = function() 
 		{
+			
 			if (this.readyState == 4 && this.status == 200) 
 			{
+
 				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
-		
+				userId = jsonObject.id;	
 				if( userId < 1 )
 				{		
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
@@ -46,7 +56,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -101,6 +111,7 @@ function readCookie()
 
 function doLogout()
 {
+
 	userId = 0;
 	firstName = "";
 	lastName = "";
@@ -111,10 +122,10 @@ function doLogout()
 // function for handling Sign Up
 function doSignup() {
 	
-	/* TO BE TESTED
+	
+	
 	let username = document.getElementById("signupUsername").value;
     let password = document.getElementById("signupPassword").value;
-
     // Check if both fields are filled
     if (!username || !password) {
         document.getElementById("signupResult").innerHTML = "Both username and password are required.";
@@ -127,8 +138,7 @@ function doSignup() {
     };
 
     let jsonPayload = JSON.stringify(tmp);
-    let url = urlBase + '/Register.' + extension; // Adjust the endpoint as needed
-
+	let url = "http://167.71.27.149/LAMPAPI/Register.php"
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -148,5 +158,5 @@ function doSignup() {
         }
     };
 
-    xhr.send(jsonPayload); */
+    xhr.send(jsonPayload); 
 }
