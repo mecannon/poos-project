@@ -1,0 +1,373 @@
+swagger: "2.0"
+info:
+  description: This is the API documentation for the COP 4331 Contact Management App
+  version: 1.0.0
+  title: CamperNet
+  contact:
+    name: Jonathan Padron
+    email: jo430544@ucf.edu
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: virtserver.swaggerhub.com
+basePath: /ucf-6d4/LAMPAPISS/1.0.0
+schemes:
+- https
+- http
+paths:
+  /Login.php:
+    post:
+      tags:
+      - Users
+      summary: Logs in to the Contact Management App
+      description: Logs in using a username and password.
+      operationId: doLogin
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: loginItem
+        description: Login details
+        required: true
+        schema:
+          $ref: '#/definitions/Login'
+      responses:
+        "200":
+          description: Successful login
+          schema:
+            $ref: '#/definitions/inline_response_200'
+        "400":
+          description: Invalid login credentials
+          schema:
+            $ref: '#/definitions/inline_response_400'
+        "500":
+          description: Server Error
+  /Register.php:
+    post:
+      tags:
+      - Users
+      summary: Registers a new user
+      description: Creates a new user account.
+      operationId: registerUser
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: registerItem
+        description: Registration details
+        required: true
+        schema:
+          $ref: '#/definitions/Register'
+      responses:
+        "200":
+          description: Successful registration
+          schema:
+            $ref: '#/definitions/inline_response_200_1'
+        "400":
+          description: User already exists
+          schema:
+            $ref: '#/definitions/inline_response_400_1'
+        "500":
+          description: Server Error
+  /AddContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Adds a contact
+      description: Adds a new contact to the database.
+      operationId: addContact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: contactItem
+        description: Contact details
+        required: true
+        schema:
+          $ref: '#/definitions/AddContact'
+      responses:
+        "200":
+          description: Contact added successfully
+          schema:
+            $ref: '#/definitions/inline_response_200_2'
+        "400":
+          description: Invalid data input
+          schema:
+            $ref: '#/definitions/inline_response_400_2'
+        "500":
+          description: Server Error
+  /UpdateContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Updates a contact
+      description: Updates an existing contact.
+      operationId: updateContact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: contactItem
+        description: Contact update details
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateContact'
+      responses:
+        "200":
+          description: Contact updated successfully
+          schema:
+            $ref: '#/definitions/inline_response_200_3'
+        "400":
+          description: Contact ID not found
+          schema:
+            $ref: '#/definitions/inline_response_400_3'
+        "500":
+          description: Server Error
+  /DeleteContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Deletes a contact
+      description: Deletes a contact from the database.
+      operationId: deleteContact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: deleteItem
+        description: Contact ID to delete
+        required: true
+        schema:
+          $ref: '#/definitions/DeleteContact'
+      responses:
+        "200":
+          description: Contact deleted successfully
+          schema:
+            $ref: '#/definitions/inline_response_200_4'
+        "400":
+          description: Contact ID not found
+          schema:
+            $ref: '#/definitions/inline_response_400_4'
+        "500":
+          description: Server Error
+  /SearchContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Searches contacts
+      description: Searches for contacts in the database.
+      operationId: searchContact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: searchItem
+        description: Contact search query
+        required: true
+        schema:
+          $ref: '#/definitions/SearchContact'
+      responses:
+        "200":
+          description: Contacts retrieved successfully
+          schema:
+            $ref: '#/definitions/inline_response_200_5'
+        "400":
+          description: No contacts found
+          schema:
+            $ref: '#/definitions/inline_response_400_5'
+        "500":
+          description: Server Error
+definitions:
+  Login:
+    type: object
+    required:
+    - login
+    - password
+    properties:
+      login:
+        type: string
+        example: fred
+      password:
+        type: string
+        example: secret
+  Register:
+    type: object
+    required:
+    - firstName
+    - lastName
+    - password
+    - username
+    properties:
+      firstName:
+        type: string
+        example: John
+      lastName:
+        type: string
+        example: Doe
+      username:
+        type: string
+        example: johndoe
+      password:
+        type: string
+        example: Password
+  AddContact:
+    type: object
+    required:
+    - email
+    - firstName
+    - lastName
+    - phone
+    - userId
+    properties:
+      userId:
+        type: integer
+        example: 1
+      firstName:
+        type: string
+        example: Jane
+      lastName:
+        type: string
+        example: Doe
+      phone:
+        type: string
+        example: 555-123-4567
+      email:
+        type: string
+        example: janedoe@example.com
+  UpdateContact:
+    type: object
+    required:
+    - ID
+    properties:
+      ID:
+        type: integer
+        example: 5
+  DeleteContact:
+    type: object
+    required:
+    - ID
+    properties:
+      ID:
+        type: integer
+        example: 5
+  SearchContact:
+    type: object
+    required:
+    - search
+    - userId
+    properties:
+      userId:
+        type: integer
+        example: 1
+      search:
+        type: string
+        example: John
+  inline_response_200:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      firstName:
+        type: string
+        example: John
+      lastName:
+        type: string
+        example: Doe
+      error:
+        type: string
+        example: ""
+  inline_response_400:
+    type: object
+    properties:
+      error:
+        type: string
+        example: No Records Found
+  inline_response_200_1:
+    type: object
+    properties:
+      result:
+        type: string
+        example: Finished Successfully
+  inline_response_400_1:
+    type: object
+    properties:
+      result:
+        type: string
+        example: User Already Exists
+  inline_response_200_2:
+    type: object
+    properties:
+      result:
+        type: string
+        example: Contact Added Successfully
+  inline_response_400_2:
+    type: object
+    properties:
+      result:
+        type: string
+        example: Invalid contact data
+  inline_response_200_3:
+    type: object
+    properties:
+      result:
+        type: string
+        example: Contact Updated Successfully
+  inline_response_400_3:
+    type: object
+    properties:
+      result:
+        type: string
+        example: No records updated. ID may not exist.
+  inline_response_200_4:
+    type: object
+    properties:
+      result:
+        type: string
+        example: Contact Deleted Successfully
+  inline_response_400_4:
+    type: object
+    properties:
+      result:
+        type: string
+        example: Contact ID does not exist.
+  inline_response_200_5_results:
+    type: object
+    properties:
+      firstName:
+        type: string
+        example: Jane
+      lastName:
+        type: string
+        example: Doe
+      phone:
+        type: string
+        example: 555-123-4567
+      email:
+        type: string
+        example: janedoe@example.com
+  inline_response_200_5:
+    type: object
+    properties:
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/inline_response_200_5_results'
+  inline_response_400_5:
+    type: object
+    properties:
+      result:
+        type: string
+        example: No Records Found
