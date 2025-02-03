@@ -13,8 +13,11 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 
+
+
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
+
 	
  	 //	var hash = md5( password );
 
@@ -58,7 +61,6 @@ function doLogin()
 		};
 		xhr.send(jsonPayload);
 	}
-	
 	catch(err)
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
@@ -118,19 +120,21 @@ function doLogout()
 }
 
 // function for handling Sign Up
-function doSignup() 
-{
-
+function doSignup() {
+	
+	let firstName = document.getElementById("signupFirstname").value;
+    let lastName = document.getElementById("signupLastname").value	
 	let username = document.getElementById("signupUsername").value;
     let password = document.getElementById("signupPassword").value;
-
     // Check if both fields are filled
-    if (!username || !password) {
-        document.getElementById("signupResult").innerHTML = "Both username and password are required.";
+    if (!username || !password || !firstName || !lastName) {
+        document.getElementById("signupResult").innerHTML = "All the fields are required.";
         return;
     }
 
     let tmp = {
+		firstName: firstName,
+		lastName: lastName,
         login: username,
         password: password
     };
