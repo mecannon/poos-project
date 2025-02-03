@@ -16,7 +16,8 @@
     text-align: right;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .topnav a:hover 

@@ -16,7 +16,8 @@
     text-align: right;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .topnav a:hover 
@@ -140,6 +141,7 @@ th
     position: relative;
     width: 34%;
 }
+
 tbody
 {
     background-color: rgba(83, 55, 32, 0.27);
@@ -156,10 +158,10 @@ input
     top: 10px;
     right: 10px;
     padding: 10px 20px;
-    background-color: #8b5e3c;
-    color: white;
+    background-color: rgba(88, 65, 49, 0.816);
+    color: rgb(224, 213, 206);
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -167,5 +169,5 @@ input
 
 #logoutButton:hover 
 {
-    background-color: #704c2d; /* Slightly darker shade for hover effect */
+    background-color: rgb(78, 58, 43); /* Slightly darker shade for hover effect */
 }
