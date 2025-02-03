@@ -1,7 +1,13 @@
 <?php
     header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-    header("Access-Control-Allow-Headers: Content-Type, Authorization");
+	header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+	header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        http_response_code(200);
+        exit();
+    }
+    
     $inData = getRequestInfo();
 
     $firstName = $inData["firstName"] ?? "";
@@ -16,7 +22,6 @@
         exit();
     }
 
-    // Update Contact
     $stmt = $conn->prepare("UPDATE contacts SET FirstName = ?, LastName = ?, Phone = ?, Email = ? WHERE ID = ?");
     $stmt->bind_param("ssssi", $firstName, $lastName, $phone, $email, $ID);
     $stmt->execute();

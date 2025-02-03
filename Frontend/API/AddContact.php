@@ -2,15 +2,19 @@
 	header("Access-Control-Allow-Origin: *");
 	header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 	header("Access-Control-Allow-Headers: Content-Type, Authorization");
+	
+	if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        http_response_code(200);
+        exit();
+    }
+
 	$inData = getRequestInfo();
 	
 	$userId = $inData["userId"];
-	$contacts = $inData["contacts"];
-
-	$firstName = $contacts["firstName"];
-	$lastName = $contacts["lastName"];
-	$phone = $contacts["phone"];
-	$email = $contacts["email"];
+	$firstName = $inData["firstName"] ?? "";
+    $lastName = $inData["lastName"] ?? "";
+	$phone = $inData["phone"] ?? "";
+	$email = $inData["email"] ;
 
 	$conn = new mysqli("localhost", "appuser", "SecurePass123", "contact");
 	if ($conn->connect_error) 
@@ -20,7 +24,7 @@
 	else
 	{
 		$stmt = $conn->prepare("INSERT into contacts (UserId,FirstName, LastName, Phone, Email) VALUES(?,?,?,?,?)");
-		$stmt->bind_param("sssss", $userId, $firstName, $lastName, $phone, $email);
+		$stmt->bind_param("issss", $userId, $firstName, $lastName, $phone, $email);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();

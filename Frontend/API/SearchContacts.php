@@ -2,6 +2,12 @@
 	header("Access-Control-Allow-Origin: *");
 	header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 	header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+	if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        http_response_code(200);
+        exit();
+    }
+
 	$inData = getRequestInfo();
 	
 	$searchResults = "";
@@ -29,7 +35,7 @@
 			}
 			$searchCount++;
 			//$searchResults .= '"' . $row["Name"] . '"';
-			$searchResults .= '{"FirstName" : "' . $row["FirstName"] . '", "LastName" : "' . $row["LastName"] . '", "Phone" : "' . $row["Phone"] . '", "Email" : "' . $row["Email"] . '"}';
+			$searchResults .= '{"FirstName" : "' . $row["FirstName"] . '", "LastName" : "' . $row["LastName"] . '", "Phone" : "' . $row["Phone"] . '", "Email" : "' . $row["Email"] . '", "ID" : "' . $row["ID"] . '"}';
 		}
 		
 		if( $searchCount == 0 )
