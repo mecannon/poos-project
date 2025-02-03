@@ -1,7 +1,7 @@
 <?php
     header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-    header("Access-Control-Allow-Headers: Content-Type, Authorization");
+	header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+	header("Access-Control-Allow-Headers: Content-Type, Authorization");
     $inData = getRequestInfo();
 
     $firstName = $inData["firstName"] ?? "";
@@ -16,7 +16,6 @@
         exit();
     }
 
-    // Check if username already exists
     $stmt = $conn->prepare("SELECT * FROM users WHERE Login=?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -28,7 +27,6 @@
         exit();
     }
 
-    // Securely hash the password before inserting into the database
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $conn->prepare("INSERT INTO users (FirstName, LastName, Login, Password) VALUES (?,?,?,?)");
     $stmt->bind_param("ssss", $firstName, $lastName, $username, $hashedPassword);
