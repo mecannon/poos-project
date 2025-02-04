@@ -1,0 +1,211 @@
+/* Navigation Bar */
+.topnav {
+    position: fixed;
+    width: 99.8%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 8px;
+}
+
+.topnav a {
+    float: right;
+    color: rgb(72, 53, 40);
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav a:hover {
+    background-color: #ac8b6c40;
+    color: rgba(85, 59, 44, 0.683);
+}
+  
+.topnav a.active {
+    background-color: rgb(58, 96, 74);
+    color: rgb(220, 205, 161);
+}
+
+.container {
+    padding: 16px;
+    background-color: rgba(167, 135, 84, 0.539);
+    width: 50%;
+    height: 125px;
+    justify-content: center;
+}
+
+/* Fonts, body adjustments */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+}
+
+html, body {
+    background-color: #d5baa3;
+    margin: 2px;
+    scrollbar-width: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+/* Ensure the title is positioned correctly */
+h1 {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 32px;
+    color: rgb(88, 65, 49);
+}
+
+h2 {
+    color: rgb(88, 65, 49);
+    margin-top: 20px;
+}
+
+/* Contacts Page Adjustments */
+input {
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgb(88, 65, 49);
+    color: rgb(117, 99, 87);
+    font-size: 14px;
+    width: 250px;
+}
+
+input::placeholder {
+    color: rgb(117, 99, 87);
+}
+
+input:focus {
+    outline: 2px solid black;
+}
+
+button {
+    background: rgba(88, 65, 49, 0.582);
+    color: rgb(224, 213, 206);
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: transparent;
+    color: rgb(88, 65, 49);
+    outline: 1px solid rgb(224, 213, 206);
+}
+
+p {
+    font-size: 14px;
+    color: rgb(224, 213, 206);
+    margin-top: 15px;
+}
+
+/* Search Box */
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#searchResult {
+    margin-top: 40px; 
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchResult table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #8B5E3C;  
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #6D4C41; 
+}
+
+#searchResult th {
+    background-color: #6D4C41; 
+    color: #F5E1DA; 
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 2px solid #5A3D2B;
+}
+
+/* Table Body Styling */
+#searchResult td {
+    background-color: #A67C52; 
+    color: #FAF3E3; 
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #8B5E3C;
+}
+
+#searchResult tbody tr:nth-child(even) {
+    background-color: #9E7B5D;
+}
+
+#searchResult tbody tr:nth-child(odd) {
+    background-color: #A67C52;
+}
+
+#searchResult tbody tr:hover {
+    background-color: #C8A482; 
+    cursor: pointer;
+}
+
+#searchResult button {
+    background: #6b4c41; 
+    color: #F5E1DA;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchResult button:hover {
+    background: #5A3D2B; 
+}
+
+#logoutButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logoutButton:hover {
+    background-color: #704c2d;
+}
+
+.addContact form {
+    margin-bottom: 50px;
+}
+
+/* Table adjustments */
+.table {
+    overflow-y: auto;
+    margin-top: 10px;
+}

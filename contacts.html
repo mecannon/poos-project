@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="tent.jpg" rel="icon" type="image/x-icon">
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" href="contacts.css">
+    <!-- Link the JavaScript file -->
+    <script src="code.js" defer></script>
+</head>
+
+<body style="background-color: #e2c4aaeb">
+    <h1 style="color: rgb(88, 65, 49); text-align: center; margin-top: 20px;">CamperNet Contacts</h1>
+
+    <div class="content">
+        <div class="search-container">
+            <!-- Search functionality -->
+            <input onkeyup="searchContacts()" type="text" id="searchText" placeholder="Search...">
+            <button type="button" id="searchButton" onclick="searchContacts();">Search</button>
+        </div>
+        <div id="searchResult"></div>
+
+        <button type="button" id="logoutButton" onclick="doLogout();">LogOut</button>
+
+        <!-- Add Contact Form -->
+        <div class="addContact">
+            <form>
+                <input type="text" id="contactTextFirst" placeholder="Enter First Name" required>
+                <input type="text" id="contactTextLast" placeholder="Enter Last Name" required>
+                <input type="text" id="contactTextNumber" placeholder="###-###-####" required>
+                <input type="text" id="contactTextEmail" placeholder="Username@email.com" required>
+                <button type="button" id="addContactButton" onclick="addContact();">Add Contact</button>
+                <span id="contactResult"></span>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
